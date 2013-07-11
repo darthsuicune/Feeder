@@ -1,0 +1,14 @@
+Feeds
+Feed
+Name TEXT NOT NULL
+Content BLOB NOT NULL
+Date TEXT NOT NULL
+Read BOOLEAN
+
+Sources
+Name TEXT NOT NULL
+Url TEXT NOT NULL
+Group INTEGER
+
+Groups
+Name TEXT NOT NULL
