@@ -24,10 +24,11 @@ public class FeedsOpenHelper extends SQLiteOpenHelper {
 
         db.execSQL(CREATE + FeedsContract.Feed.TABLE_NAME + " ("
                 + FeedsContract.Feed._ID + KEY
-                + FeedsContract.Feed.NAME + "TEXT NOT NULL, "
+                + FeedsContract.Feed.TITLE + "TEXT NOT NULL, "
                 + FeedsContract.Feed.CONTENT + "BLOB NOT NULL, "
                 + FeedsContract.Feed.DATE + "TEXT NOT NULL, "
-                + FeedsContract.Feed.READ + "BOOLEAN)"
+                + FeedsContract.Feed.READ + "BOOLEAN, "
+                + FeedsContract.Feed.SOURCE + "INTEGER NOT NULL)"
         );
 
         db.execSQL(CREATE + FeedsContract.Sources.TABLE_NAME + " ("

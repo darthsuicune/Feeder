@@ -23,7 +23,7 @@
 
     <fragment
         android:id="@+id/item_list"
-        android:name="com.suicune.feeder.fragments.ItemListFragment"
+        android:name="com.suicune.feeder.ui.ItemListFragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -36,3 +36,4 @@
         android:layout_weight="3" />
 
 </LinearLayout>
+<!-- From: file:/home/lapuente/projects/Feeder/Feeder/src/main/res/layout/activity_item_twopane.xml -->

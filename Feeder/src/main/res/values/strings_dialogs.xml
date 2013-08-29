@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="dialog_add_feed_title">Add a new feed</string>
+    <string name="dialog_add_feed">Add</string>
+    <string name="dialog_add_feed_name_hint">Feed name</string>
+    <string name="dialog_add_feed_url_hint">Feed url</string>
+    <string name="dialog_add_feed_mark_as_favorite">Mark as favorite</string>
+</resources>

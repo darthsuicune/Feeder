@@ -7,3 +7,4 @@
     android:padding="16dp"
     android:textIsSelectable="true"
     tools:context=".ItemDetailFragment" />
+<!-- From: file:/home/lapuente/projects/Feeder/Feeder/src/main/res/layout/fragment_item_detail.xml -->

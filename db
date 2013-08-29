@@ -1,9 +1,10 @@
 Feeds
 Feed
-Name TEXT NOT NULL
+Title TEXT NOT NULL
 Content BLOB NOT NULL
 Date TEXT NOT NULL
 Read BOOLEAN
+Source INTEGER NOT NULL
 
 Sources
 Name TEXT NOT NULL
