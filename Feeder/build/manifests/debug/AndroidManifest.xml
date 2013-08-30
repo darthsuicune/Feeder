@@ -48,6 +48,7 @@
 
         <provider android:authorities="com.suicune.feeder.database.Provider" android:exported="false" android:name="com.suicune.feeder.database.FeedsProvider">
         </provider>
+        <service android:label="FeedUpdateService" android:name="com.suicune.feeder.app.FeedRetrieverService"/>
     </application>
 
 </manifest>

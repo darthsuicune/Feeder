@@ -883,8 +883,9 @@ containing a value of this type.
         public static final int collapseActionView=0x7f070011;
         public static final int default_activity_button=0x7f070026;
         public static final int dialog=0x7f070012;
-        public static final int dialog_add_feed_name_hint=0x7f070045;
-        public static final int dialog_add_feed_url_hint=0x7f070046;
+        public static final int dialog_add_feed_name=0x7f070045;
+        public static final int dialog_add_feed_title=0x7f070044;
+        public static final int dialog_add_feed_url=0x7f070046;
         public static final int disableHome=0x7f070008;
         public static final int dropdown=0x7f070013;
         public static final int edit_query=0x7f070036;
@@ -929,7 +930,6 @@ containing a value of this type.
         public static final int split_action_bar=0x7f07001c;
         public static final int submit_area=0x7f07003f;
         public static final int tabMode=0x7f070002;
-        public static final int textView=0x7f070044;
         public static final int title=0x7f070029;
         public static final int title_container=0x7f070030;
         public static final int top_action_bar=0x7f07001e;
@@ -1006,9 +1006,10 @@ containing a value of this type.
         public static final int dialog_add_feed_name_hint=0x7f0a0011;
         public static final int dialog_add_feed_title=0x7f0a0012;
         public static final int dialog_add_feed_url_hint=0x7f0a0013;
+        public static final int error_dialog_add_feed_no_data=0x7f0a0014;
         /**  From: file:/home/lapuente/projects/Feeder/Feeder/src/main/res/values/strings.xml 
          */
-        public static final int title_item_detail=0x7f0a0014;
+        public static final int title_item_detail=0x7f0a0015;
     }
     public static final class style {
         /**  From: file:/home/lapuente/projects/Feeder/Feeder/src/main/res/values/styles.xml 

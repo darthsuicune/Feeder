@@ -3,6 +3,7 @@ package com.suicune.feeder.ui;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
@@ -22,7 +23,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 import com.suicune.feeder.R;
+import com.suicune.feeder.app.Feed;
+import com.suicune.feeder.database.FeedsContract;
 import com.suicune.feeder.database.FeedsProvider;
 
 /**
@@ -80,16 +84,9 @@ public class ItemListFragment extends ListFragment implements LoaderManager.Load
             createFeedFromIntent();
         }
 
-        // TODO: replace with a real list adapter.
-        String[] from = {
-
-        };
-        int[] to = {
-
-        };
-        mAdapter = new SimpleCursorAdapter(getActivity(),
-                R.layout.activity_item_list, null, from, to,
-                CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER);
+        String[] from = { FeedsContract.Feeds.NAME };
+        int[] to = { android.R.id.text1 };
+        mAdapter = new FeedListAdapter(getActivity(), from, to);
         setListAdapter(mAdapter);
         getLoaderManager().restartLoader(LOADER_FEEDS, null, this);
     }
@@ -149,7 +146,6 @@ public class ItemListFragment extends ListFragment implements LoaderManager.Load
 
         // Notify the active callbacks interface (the activity, if the
         // fragment is attached to one) that an item has been selected.
-        //TODO
         mCallbacks.onItemSelected(id);
     }
 
@@ -204,7 +200,7 @@ public class ItemListFragment extends ListFragment implements LoaderManager.Load
     public Loader<Cursor> onCreateLoader(int id, Bundle bundle) {
         switch (id) {
             case LOADER_FEEDS:
-                return new CursorLoader(getActivity(), FeedsProvider.CONTENT_FEED, null,
+                return new CursorLoader(getActivity(), FeedsProvider.CONTENT_ITEMS, null,
                         null, null, null);
             default:
                 return null;
@@ -270,7 +266,15 @@ public class ItemListFragment extends ListFragment implements LoaderManager.Load
                     if(!TextUtils.isEmpty(mTitle) && !TextUtils.isEmpty(mUrl)){
                         mTitle = mTitleView.getText().toString();
                         mUrl = mUrlView.getText().toString();
-                        addFeed(mTitle, mUrl);
+                        new Thread(new Runnable() {
+                            @Override
+                            public void run() {
+                                new Feed(mTitle, mUrl).retrieve(getActivity().getContentResolver());
+                            }
+                        }).start();
+                    } else {
+                        Toast.makeText(getActivity(), R.string.error_dialog_add_feed_no_data,
+                                Toast.LENGTH_LONG).show();
                     }
                 }
             });
@@ -282,9 +286,23 @@ public class ItemListFragment extends ListFragment implements LoaderManager.Load
             });
             return builder.create();
         }
+    }
 
-        public void addFeed(String name, String url){
-            //TODO
+    public class FeedListAdapter extends SimpleCursorAdapter {
+        public FeedListAdapter(Context context, String[] from, int[] to){
+            super(context, R.layout.activity_item_list, null, from, to,
+                    CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER);
         }
+
+//        @Override
+//        public View getView(int position, View convertView, ViewGroup parent) {
+//            View row = convertView;
+//            if (row == null) {
+//                LayoutInflater inflater = (LayoutInflater) getActivity()
+//                        .getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
+//                //TODO inflate layout and do stuff with it.
+//            }
+//            return super.getView(position, row, parent);
+//        }
     }
 }

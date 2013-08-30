@@ -245,8 +245,9 @@ int id checkbox 0x7f07002b
 int id collapseActionView 0x7f070011
 int id default_activity_button 0x7f070026
 int id dialog 0x7f070012
-int id dialog_add_feed_name_hint 0x7f070045
-int id dialog_add_feed_url_hint 0x7f070046
+int id dialog_add_feed_name 0x7f070045
+int id dialog_add_feed_title 0x7f070044
+int id dialog_add_feed_url 0x7f070046
 int id disableHome 0x7f070008
 int id dropdown 0x7f070013
 int id edit_query 0x7f070036
@@ -291,7 +292,6 @@ int id showTitle 0x7f070006
 int id split_action_bar 0x7f07001c
 int id submit_area 0x7f07003f
 int id tabMode 0x7f070002
-int id textView 0x7f070044
 int id title 0x7f070029
 int id title_container 0x7f070030
 int id top_action_bar 0x7f07001e
@@ -350,7 +350,8 @@ int string dialog_add_feed_mark_as_favorite 0x7f0a0010
 int string dialog_add_feed_name_hint 0x7f0a0011
 int string dialog_add_feed_title 0x7f0a0012
 int string dialog_add_feed_url_hint 0x7f0a0013
-int string title_item_detail 0x7f0a0014
+int string error_dialog_add_feed_no_data 0x7f0a0014
+int string title_item_detail 0x7f0a0015
 int style AppBaseTheme 0x7f0b0000
 int style AppTheme 0x7f0b0001
 int style TextAppearance_AppCompat_Base_CompactMenu_Dialog 0x7f0b0002

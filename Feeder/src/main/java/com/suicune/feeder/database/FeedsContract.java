@@ -4,8 +4,8 @@ import android.provider.BaseColumns;
 
 public final class FeedsContract {
 
-    public static class Feed implements BaseColumns {
-        public static final String TABLE_NAME = "feed";
+    public static class Items implements BaseColumns {
+        public static final String TABLE_NAME = "items";
         public static final String DEFAULT_ORDER = _ID + " DESC";
 
         public static final String TITLE = "title";
@@ -15,13 +15,13 @@ public final class FeedsContract {
         public static final String SOURCE = "source";
     }
 
-    public static class Sources implements BaseColumns {
-        public static final String TABLE_NAME = "sources";
+    public static class Feeds implements BaseColumns {
+        public static final String TABLE_NAME = "feeds";
         public static final String DEFAULT_ORDER = _ID + " DESC";
 
         public static final String NAME = "name";
         public static final String URL = "url";
-        public static final String GROUP = "group";
+        public static final String GROUP = "groupid";
     }
 
     public static class Groups implements BaseColumns {

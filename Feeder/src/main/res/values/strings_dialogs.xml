@@ -5,4 +5,6 @@
     <string name="dialog_add_feed_name_hint">Feed name</string>
     <string name="dialog_add_feed_url_hint">Feed url</string>
     <string name="dialog_add_feed_mark_as_favorite">Mark as favorite</string>
+
+    <string name="error_dialog_add_feed_no_data">Nothing was added as the fields were empty.</string>
 </resources>

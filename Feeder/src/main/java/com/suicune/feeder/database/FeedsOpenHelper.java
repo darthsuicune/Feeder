@@ -22,25 +22,25 @@ public class FeedsOpenHelper extends SQLiteOpenHelper {
             db = getWritableDatabase();
         }
 
-        db.execSQL(CREATE + FeedsContract.Feed.TABLE_NAME + " ("
-                + FeedsContract.Feed._ID + KEY
-                + FeedsContract.Feed.TITLE + "TEXT NOT NULL, "
-                + FeedsContract.Feed.CONTENT + "BLOB NOT NULL, "
-                + FeedsContract.Feed.DATE + "TEXT NOT NULL, "
-                + FeedsContract.Feed.READ + "BOOLEAN, "
-                + FeedsContract.Feed.SOURCE + "INTEGER NOT NULL)"
+        db.execSQL(CREATE + FeedsContract.Items.TABLE_NAME + " ("
+                + FeedsContract.Items._ID + KEY
+                + FeedsContract.Items.TITLE + " TEXT NOT NULL, "
+                + FeedsContract.Items.CONTENT + " BLOB NOT NULL, "
+                + FeedsContract.Items.DATE + " TEXT NOT NULL, "
+                + FeedsContract.Items.READ + " BOOLEAN, "
+                + FeedsContract.Items.SOURCE + " INTEGER NOT NULL)"
         );
 
-        db.execSQL(CREATE + FeedsContract.Sources.TABLE_NAME + " ("
-                + FeedsContract.Sources._ID + KEY
-                + FeedsContract.Sources.NAME + "TEXT NOT NULL, "
-                + FeedsContract.Sources.URL + "TEXT NOT NULL, "
-                + FeedsContract.Sources.GROUP + "INTEGER)"
+        db.execSQL(CREATE + FeedsContract.Feeds.TABLE_NAME + " ("
+                + FeedsContract.Feeds._ID + KEY
+                + FeedsContract.Feeds.NAME + " TEXT NOT NULL, "
+                + FeedsContract.Feeds.URL + " TEXT NOT NULL, "
+                + FeedsContract.Feeds.GROUP + " INTEGER)"
         );
 
         db.execSQL(CREATE + FeedsContract.Groups.TABLE_NAME + " ("
                 + FeedsContract.Groups._ID + KEY
-                + FeedsContract.Groups.NAME + "TEXT NOT NULL)"
+                + FeedsContract.Groups.NAME + " TEXT NOT NULL)"
         );
 
     }

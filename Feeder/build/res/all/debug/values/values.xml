@@ -509,6 +509,7 @@
     <string name="dialog_add_feed_name_hint">Feed name</string>
     <string name="dialog_add_feed_title">Add a new feed</string>
     <string name="dialog_add_feed_url_hint">Feed url</string>
+    <string name="error_dialog_add_feed_no_data">Nothing was added as the fields were empty.</string>
     <!-- From: file:/home/lapuente/projects/Feeder/Feeder/src/main/res/values/strings.xml -->
     <string name="title_item_detail">Item Detail</string>
     <!-- From: file:/home/lapuente/projects/Feeder/Feeder/src/main/res/values/styles.xml -->
