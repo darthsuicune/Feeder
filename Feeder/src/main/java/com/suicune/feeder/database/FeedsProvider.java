@@ -8,7 +8,6 @@ public class FeedsProvider extends ContentProvider {
     protected static final String CONTENT_NAME = "com.suicune.feeder.database.Provider";
     public static final Uri CONTENT_ITEMS = Uri.parse("content://" + CONTENT_NAME + "/items");
     public static final Uri CONTENT_FEEDS = Uri.parse("content://" + CONTENT_NAME + "/feeds");
-    public static final Uri CONTENT_GROUPS = Uri.parse("content://" + CONTENT_NAME + "/groups");
 
     FeedsOpenHelper mDbHelper;
 
@@ -16,8 +15,6 @@ public class FeedsProvider extends ContentProvider {
     private static final int ITEMS_ID = 2;
     private static final int FEEDS = 3;
     private static final int FEEDS_ID = 4;
-    private static final int GROUPS = 5;
-    private static final int GROUPS_ID = 6;
 
     static UriMatcher sUriMatcher;
     static {
@@ -26,8 +23,6 @@ public class FeedsProvider extends ContentProvider {
         sUriMatcher.addURI(CONTENT_NAME, FeedsContract.Items.TABLE_NAME + "/#", ITEMS_ID);
         sUriMatcher.addURI(CONTENT_NAME, FeedsContract.Feeds.TABLE_NAME, FEEDS);
         sUriMatcher.addURI(CONTENT_NAME, FeedsContract.Feeds.TABLE_NAME + "/#", FEEDS_ID);
-        sUriMatcher.addURI(CONTENT_NAME, FeedsContract.Groups.TABLE_NAME, GROUPS);
-        sUriMatcher.addURI(CONTENT_NAME, FeedsContract.Groups.TABLE_NAME + "/#", GROUPS_ID);
     }
 
     @Override
@@ -47,10 +42,6 @@ public class FeedsProvider extends ContentProvider {
                 return ContentResolver.CURSOR_DIR_BASE_TYPE + CONTENT_NAME + "." + FeedsContract.Feeds.TABLE_NAME;
             case FEEDS_ID:
                 return ContentResolver.CURSOR_ITEM_BASE_TYPE + CONTENT_NAME + "." + FeedsContract.Feeds.TABLE_NAME;
-            case GROUPS:
-                return ContentResolver.CURSOR_DIR_BASE_TYPE + CONTENT_NAME + "." + FeedsContract.Groups.TABLE_NAME;
-            case GROUPS_ID:
-                return ContentResolver.CURSOR_ITEM_BASE_TYPE + CONTENT_NAME + "." + FeedsContract.Groups.TABLE_NAME;
             default:
                 return null;
         }
@@ -64,9 +55,6 @@ public class FeedsProvider extends ContentProvider {
             case FEEDS_ID:
             case FEEDS:
                 return FeedsContract.Feeds.TABLE_NAME;
-            case GROUPS_ID:
-            case GROUPS:
-                return FeedsContract.Groups.TABLE_NAME;
             default:
                 return null;
         }

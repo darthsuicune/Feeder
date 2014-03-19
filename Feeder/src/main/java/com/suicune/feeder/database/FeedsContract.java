@@ -21,14 +21,7 @@ public final class FeedsContract {
 
         public static final String NAME = "name";
         public static final String URL = "url";
-        public static final String GROUP = "groupid";
-    }
-
-    public static class Groups implements BaseColumns {
-        public static final String TABLE_NAME = "groups";
-        public static final String DEFAULT_ORDER = _ID + " DESC";
-
-        public static final String NAME = "name";
+        public static final String GROUP = "group";
     }
 
 }

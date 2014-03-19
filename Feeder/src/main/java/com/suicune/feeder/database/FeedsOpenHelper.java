@@ -38,11 +38,6 @@ public class FeedsOpenHelper extends SQLiteOpenHelper {
                 + FeedsContract.Feeds.GROUP + " INTEGER)"
         );
 
-        db.execSQL(CREATE + FeedsContract.Groups.TABLE_NAME + " ("
-                + FeedsContract.Groups._ID + KEY
-                + FeedsContract.Groups.NAME + " TEXT NOT NULL)"
-        );
-
     }
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {

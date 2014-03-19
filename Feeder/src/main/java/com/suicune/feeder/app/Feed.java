@@ -57,7 +57,13 @@ public class Feed {
         ContentValues values = new ContentValues();
         values.put(FeedsContract.Feeds.NAME, mName);
         values.put(FeedsContract.Feeds.URL, mUrl);
+        values.put(FeedsContract.Feeds.GROUP, mGroup);
         cr.insert(FeedsProvider.CONTENT_FEEDS, values);
+        for (Item item : mItemList){
+            values.clear();
+            values.put("","");
+            cr.insert(FeedsProvider.CONTENT_ITEMS, values);
+        }
     }
 
     /**
