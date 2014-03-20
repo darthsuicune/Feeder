@@ -18,7 +18,7 @@ public class Feed {
     public String mName;
     public String mUrl;
     public String mGroup;
-    public ArrayList<Item> mItemList;
+    public ArrayList<Entry> mEntryList;
 
     /**
      * Public constructor to create a Feed from the dialog.
@@ -33,7 +33,7 @@ public class Feed {
      * @param cursor
      */
     public Feed(Cursor cursor) {
-        mItemList = new ArrayList<Item>();
+        mEntryList = new ArrayList<Entry>();
         if(cursor.moveToFirst()){
             mId = cursor.getInt(cursor.getColumnIndex(FeedsContract.Feeds._ID));
             mName = cursor.getString(cursor.getColumnIndex(FeedsContract.Feeds.NAME));
@@ -43,7 +43,7 @@ public class Feed {
     }
 
     public boolean hasNewElements() {
-        return !mItemList.get(0).mRead;
+        return !mEntryList.get(0).mRead;
     }
 
     /**
@@ -59,7 +59,7 @@ public class Feed {
         values.put(FeedsContract.Feeds.URL, mUrl);
         values.put(FeedsContract.Feeds.GROUP, mGroup);
         cr.insert(FeedsProvider.CONTENT_FEEDS, values);
-        for (Item item : mItemList){
+        for (Entry entry : mEntryList){
             values.clear();
             values.put("","");
             cr.insert(FeedsProvider.CONTENT_ITEMS, values);

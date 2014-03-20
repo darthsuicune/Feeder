@@ -13,19 +13,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 import com.suicune.feeder.R;
-import com.suicune.feeder.app.Item;
+import com.suicune.feeder.app.Entry;
+import com.suicune.feeder.app.FeedEntry;
 import com.suicune.feeder.app.Settings;
 import com.suicune.feeder.database.FeedsContract;
 import com.suicune.feeder.database.FeedsProvider;
 
 /**
- * A fragment representing a single Item detail screen.
- * This fragment is either contained in a {@link com.suicune.feeder.ui.ItemListActivity}
- * in two-pane mode (on tablets) or a {@link com.suicune.feeder.ui.ItemDetailActivity}
+ * A fragment representing a single Entry detail screen.
+ * This fragment is either contained in a {@link EntryListActivity}
+ * in two-pane mode (on tablets) or a {@link EntryDetailActivity}
  * on handsets.
  */
-public class ItemDetailFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor>{
+public class EntryDetailFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor>{
     /**
      * The fragment argument representing the item ID that this fragment
      * represents.
@@ -39,7 +41,7 @@ public class ItemDetailFragment extends Fragment implements LoaderManager.Loader
     /**
      * The dummy content this fragment is presenting.
      */
-    private Item mItem;
+    private Entry mEntry;
 
     //TODO: Change for actual layout.
     private TextView textView;
@@ -48,7 +50,7 @@ public class ItemDetailFragment extends Fragment implements LoaderManager.Loader
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public ItemDetailFragment() {
+    public EntryDetailFragment() {
     }
 
     @Override
@@ -73,10 +75,6 @@ public class ItemDetailFragment extends Fragment implements LoaderManager.Loader
     }
 
     public void showDetails(){
-        // Show the content as text in a TextView.
-        if (mItem != null) {
-            textView.setText(mItem.mContent);
-        }
     }
 
     @Override
@@ -91,11 +89,11 @@ public class ItemDetailFragment extends Fragment implements LoaderManager.Loader
 
     @Override
     public void onLoadFinished(Loader<Cursor> cursorLoader, Cursor cursor) {
-        mItem = new Item(cursor);
+        mEntry = new FeedEntry(cursor);
         showDetails();
-        if(prefs != null && !mItem.mRead
+        if(prefs != null && !mEntry.isRead()
                 && prefs.getBoolean(Settings.MARK_AS_READ_WHEN_SHOWN, true)) {
-            mItem.markAsRead(getActivity().getContentResolver());
+            mEntry.markAsRead(getActivity().getContentResolver());
         }
     }
 

@@ -33,12 +33,12 @@ import com.suicune.feeder.database.FeedsProvider;
  * A list fragment representing a list of Items. This fragment
  * also supports tablet devices by allowing list items to be given an
  * 'activated' state upon selection. This helps indicate which item is
- * currently being viewed in a {@link com.suicune.feeder.ui.ItemDetailFragment}.
+ * currently being viewed in a {@link EntryDetailFragment}.
  * <p/>
  * Activities containing this fragment MUST implement the {@link Callbacks}
  * interface.
  */
-public class ItemListFragment extends ListFragment implements LoaderManager.LoaderCallbacks<Cursor> {
+public class EntryListFragment extends ListFragment implements LoaderManager.LoaderCallbacks<Cursor> {
 
     /**
      * The serialization (saved instance state) Bundle key representing the
@@ -73,7 +73,7 @@ public class ItemListFragment extends ListFragment implements LoaderManager.Load
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public ItemListFragment() {
+    public EntryListFragment() {
     }
 
     @Override

@@ -7,9 +7,10 @@ import android.content.Intent;
  * Created by lapuente on 30.08.13.
  */
 public class FeedRetrieverService extends IntentService {
+    private static final String FEED_RETRIEVER_SERVICE_NAME = "FeedRetriever";
 
-    public FeedRetrieverService(String name) {
-        super(name);
+    public FeedRetrieverService() {
+        super(FEED_RETRIEVER_SERVICE_NAME);
     }
 
     @Override
