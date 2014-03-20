@@ -19,7 +19,9 @@ local.properties
 .classpath
 .project
 .settings
-.idea
+
+# Android Studio folder
+.idea/
 *.iml
 
 Feeder/build/
